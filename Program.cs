@@ -18,14 +18,19 @@ namespace CalculadoraIMC
             float imc = peso / (altura*altura);
 
             Console.WriteLine($"{nomeUsuario}, seu IMC é: {imc}");
+
+            float pesoIdeal = 21*(altura*altura);
+            double pesoNecessario = pesoIdeal > peso ? pesoIdeal - peso : peso - pesoIdeal;
             
+            pesoNecessario = Math.Round(pesoNecessario);
+
             if(imc <= 0)
             {
                 Console.WriteLine("Valores inválidos!");
             }
             else if(imc <= 18.5)
             {
-                Console.WriteLine("Status: Abaixo do peso;");
+                Console.WriteLine($"Status: Abaixo do peso; Você precisa ganhar {pesoNecessario}kg para ter o peso normal.");
             }
             else if(imc <= 24.9)
             {
@@ -33,19 +38,19 @@ namespace CalculadoraIMC
             }
             else if(imc <= 29.9)
             {
-                Console.WriteLine("Status: Sobrepeso;");
+                Console.WriteLine($"Status: Sobrepeso; Você precisa perder {pesoNecessario}kg para ter o peso normal.");
             }
             else if(imc <= 34.9)
             {
-                Console.WriteLine("Status: Obesidade Grau I");
+                Console.WriteLine($"Status: Obesidade Grau I; Você precisa perder {pesoNecessario}kg para ter o peso normal.");
             }
             else if(imc <= 39.9)
             {
-                Console.WriteLine("Status: Obesidade Grau II");
+                Console.WriteLine($"Status: Obesidade Grau II; Você precisa perder {pesoNecessario}kg para ter o peso normal.");
             }
             else if(imc >= 40)
             {
-                Console.WriteLine("Status: Obesidade Grau III ou Mórbida");
+                Console.WriteLine($"Status: Obesidade Grau III ou Mórbida; Você precisa perder {pesoNecessario}kg para ter o peso normal.");
             }
         }
     }   

@@ -5,10 +5,12 @@ Calculadora criada para a aula de 30/03 de Linguagem de Programação 3.
 ## Funcionalidades
 
 - Calcula o IMC provido pelo usuário.
+- Informa a classificação IMC do usuário.
+- Informa quantos Kg devem ser ganhos/perdidos para atingir IMC de 21.
 
 ## Tecnologias utilizadas
 
-- .NET 2.1.7
+- .NET 6.0.3
 
 ## Uso
 
